@@ -9,6 +9,15 @@
     <script src="main.js"></script>
 </head>
 <body>
-    
+    <?php
+        include './PHP/cnx.php';
+
+        $sql = $bdd->prepare("select idCateg, nomCateg from categorie");
+        $sql->execute();
+        foreach ($sql->fetchAll(PDO::FETCH_ASSOC) as $ligne)
+        {
+            echo "<input type='radio' value ='".$ligne['idCateg]."'>".$ligne['nomCateg'];
+        }
+?>
 </body>
 </html>
