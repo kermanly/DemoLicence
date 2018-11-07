@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 //connexion a la base de données
 // dsn = Data Source Name = driver MYSQL
 $dsn='mysql:dbname=sncf;host=localhost';

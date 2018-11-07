@@ -12,6 +12,8 @@ and open the template in the editor.
         <script type="text/javascript" src="../JS/fonctions.js"></script>
     </head>
     <body>
+
+
         <?php
             include 'cnx.php';
 
