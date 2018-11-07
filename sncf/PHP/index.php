@@ -10,22 +10,19 @@
 </head>
 <body>
     <?php
-
-        include '../PHP/cnxx.php';
-
+        include '../PHP/cnx.php';
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
     
         echo "<select  onclick=AfficherLesFormations()>";
             foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne)
             {
-                echo"<option name='num' value='".$ligne['id']."'>".$ligne['nom']."'>".$ligne['prenom']"</option>";
+                echo"<option name='num' value='".$ligne['numero']."'>".$ligne['libelle']."</option>";
             }
    
         echo"</select>";
         
         echo "<div id='divFormations'></div>";
-
        
         
     ?>

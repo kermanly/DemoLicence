@@ -10,9 +10,7 @@
 </head>
 <body>
     <?php
-
-        include '../PHP/cnxx.php';
-
+        include '../PHP/cnx.php';
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
     
@@ -25,7 +23,6 @@
         echo"</select>";
         
         echo "<div id='divFormations'></div>";
-
        
         
     ?>

@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 //connexion a la base de données
 // dsn = Data Source Name = driver MYSQL
-$dsn='mysql:dbname=sncf;host=localhost';
+$dsn='mysql:dbname=ludotheque;host=localhost';
 //login
 $login='root';
 // Mot de passe
