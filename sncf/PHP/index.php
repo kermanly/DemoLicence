@@ -1,31 +1,31 @@
-<!DocTYPE <!DOCTYPE html>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SNCF</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../JQuery/jquery-3.1.1.js"></script>
-    <script src="../JS/mesfonctions.js"></script>
-</head>
-<body>
-    <?php
-        include '../PHP/cnx.php';
-        $sql = $bdd->prepare("select numero, libelle from activite");
-        $sql->execute();
-    
-        echo "<select  onclick=AfficherLesFormations()>";
-            foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne)
-            {
-                echo"<option name='num' value='".$ligne['numero']."'>".$ligne['libelle']."</option>";
-            }
-   
-        echo"</select>";
-        
-        echo "<div id='divFormations'></div>";
-       
-        
-    ?>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript" src="../JQuery/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="../JS/fonctions.js"></script>
+    </head>
+    <body>
+        <?php
+            include 'cnx.php';
 
-</body>
+            $sql = $bdd->prepare("select numero, libelle from activite ");
+            $sql->execute();
+            echo "<label>Liste des activités</label><br>";
+            echo "<select id=lstActivites onchange='AfficherLesFormations()'>";
+            foreach($sql->fetchAll(PDO::FETCH_ASSOC) as $ligne)
+            {
+                echo "<option value='".$ligne['numero']."'>".$ligne['libelle']."</option>";
+            }
+            echo "</select>";
+        ?>
+        <div id='divFormations'></div>
+        <div id='divAgents'></div>
+    </body>
 </html>
